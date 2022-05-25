@@ -27,6 +27,7 @@ client.once('ready', () => {
 });
 
 client.on('interactionCreate', async interaction => {
+	var config = JSON.parse(fs.readFileSync('./config.json', 'utf8'));
 	if (!interaction.isCommand()) return;
 
 	else if (interaction.commandName === 'log_addsellrate') {
